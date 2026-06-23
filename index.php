@@ -66,13 +66,7 @@
     <div class="form-group">
         <label>Material del Producto</label>
 
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="material[]" value="Plástico"> Plástico</label>
-            <label><input type="checkbox" name="material[]" value="Metal"> Metal</label>
-            <label><input type="checkbox" name="material[]" value="Madera"> Madera</label>
-            <label><input type="checkbox" name="material[]" value="Vidrio"> Vidrio</label>
-            <label><input type="checkbox" name="material[]" value="Textil"> Textil</label>
-        </div>
+        <div id="materialesContainer" class="checkbox-group"></div>
     </div>
 
     <div class="form-group">
