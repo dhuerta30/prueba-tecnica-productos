@@ -71,6 +71,7 @@
             <label><input type="checkbox" name="material[]" value="Metal"> Metal</label>
             <label><input type="checkbox" name="material[]" value="Madera"> Madera</label>
             <label><input type="checkbox" name="material[]" value="Vidrio"> Vidrio</label>
+            <label><input type="checkbox" name="material[]" value="Textil"> Textil</label>
         </div>
     </div>
 
