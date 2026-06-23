@@ -1,0 +1,83 @@
+=====================================================================
+ SISTEMA DE REGISTRO DE PRODUCTOS
+ Prueba de Diagnostico
+=====================================================================
+
+-------------------------------------------------
+ 1. TECNOLOGIAS Y VERSIONES
+-------------------------------------------------
+ - PHP        : 8.1 o superior (minimo 7.4)
+ - Base datos : MySQL 8.0 o superior  /  MariaDB 10.4 o superior
+ - Servidor   : Apache (XAMPP, WAMP, Laragon o similar)
+ - Frontend   : HTML5, CSS3 nativo y JavaScript nativo (sin frameworks)
+
+-------------------------------------------------
+ 2. ESTRUCTURA DE CARPETAS
+-------------------------------------------------
+ El proyecto debe quedar organizado asi (IMPORTANTE: el JS usa estas
+ rutas: "css/style.css", "js/app.js" y "php/...". Respetar la estructura):
+
+   /registro-productos
+       index.php
+       LEEME.txt
+       /css
+           style.css
+       /js
+           app.js
+       /php
+           conexion.php
+           obtener_bodegas.php
+           obtener_sucursales.php
+           obtener_monedas.php
+           obtener_materiales.php
+           validar_codigo.php
+           guardar_producto.php
+       /sql
+           prueba_productos.sql
+
+-------------------------------------------------
+ 3. INSTALACION
+-------------------------------------------------
+ 1) Copiar la carpeta del proyecto dentro del directorio web del
+    servidor. Ejemplo en XAMPP:
+        C:\xampp\htdocs\registro-productos
+
+ 2) Iniciar Apache y MySQL desde el panel de control de XAMPP/WAMP.
+
+ 3) Crear la base de datos importando el script SQL.
+    Opcion A (phpMyAdmin):
+        - Abrir http://localhost/phpmyadmin
+        - Pestania "Importar"
+        - Seleccionar el archivo:  sql/prueba_productos.sql
+        - Ejecutar (el script crea la BD, las tablas y datos de prueba)
+
+    Opcion B (linea de comandos):
+        mysql -u root -p < sql/prueba_productos.sql
+
+ 4) Verificar los datos de conexion en  php/conexion.php :
+        $host   = "localhost";
+        $dbname = "prueba_productos";
+        $user   = "root";
+        $pass   = "";          <-- ajustar si tu MySQL tiene contrasena
+
+ 5) Abrir la aplicacion en el navegador:
+        http://localhost/registro-productos/index.php
+
+-------------------------------------------------
+ 4. USO
+-------------------------------------------------
+ - Al cargar la pagina se llenan automaticamente los select de Bodega,
+   Moneda y los checkboxes de Materiales desde la base de datos.
+ - Al seleccionar una Bodega se cargan dinamicamente sus Sucursales.
+ - El boton "Guardar Producto" valida todos los campos por JavaScript
+   y, si todo es correcto, envia los datos por AJAX al servidor, que los
+   guarda dentro de una transaccion (producto + materiales).
+ - El codigo del producto se verifica como unico tanto al salir del
+   campo (evento blur) como al momento de guardar.
+
+-------------------------------------------------
+ 5. DATOS DE PRUEBA INCLUIDOS
+-------------------------------------------------
+ El script SQL ya inserta bodegas, sucursales, monedas y materiales
+ de ejemplo para que el formulario funcione de inmediato.
+=====================================================================
