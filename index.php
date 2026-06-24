@@ -20,19 +20,19 @@
         <div>
 
             <div class="form-group">
-                <label>Código Producto</label>
+                <label for="codigo">Código Producto</label>
                 <input type="text" id="codigo" name="codigo">
             </div>
 
             <div class="form-group">
-                <label>Bodega</label>
+                <label for="bodega">Bodega</label>
                 <select id="bodega" name="bodega">
                     <option value=""></option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label>Moneda</label>
+                <label for="moneda">Moneda</label>
                 <select id="moneda" name="moneda">
                     <option value=""></option>
                 </select>
@@ -43,19 +43,19 @@
         <div>
 
             <div class="form-group">
-                <label>Nombre Producto</label>
+                <label for="nombre">Nombre Producto</label>
                 <input type="text" id="nombre" name="nombre">
             </div>
 
             <div class="form-group">
-                <label>Sucursal</label>
+                <label for="sucursal">Sucursal</label>
                 <select id="sucursal" name="sucursal">
                     <option value=""></option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label>Precio</label>
+                <label for="precio">Precio</label>
                 <input type="text" id="precio" name="precio">
             </div>
 
@@ -70,7 +70,7 @@
     </div>
 
     <div class="form-group">
-        <label>Descripción</label>
+        <label for="descripcion">Descripción</label>
         <textarea id="descripcion" name="descripcion"></textarea>
     </div>
 

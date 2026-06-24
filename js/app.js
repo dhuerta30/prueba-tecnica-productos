@@ -210,7 +210,7 @@ async function guardarProducto() {
             return;
         }
         if (!sucursal) {
-            alert("Debe seleccionar una sucursal.");
+            alert("Debe seleccionar una sucursal para la bodega seleccionada.");
             return;
         }
         if (!moneda) {
