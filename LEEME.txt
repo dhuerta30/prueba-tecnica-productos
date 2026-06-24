@@ -11,10 +11,8 @@ Estructura:
 
 /css
     style.css
-
 /js
     app.js
-
 /php
     conexion.php
     guardar_producto.php
@@ -23,7 +21,6 @@ Estructura:
     obtener_monedas.php
     obtener_sucursales.php
     validar_codigo.php
-
 /sql
     prueba_productos.sql
 
