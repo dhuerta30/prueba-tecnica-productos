@@ -14,6 +14,12 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE DATABASE IF NOT EXISTS prueba_productos
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE prueba_productos;
+
 -- Volcando estructura para tabla prueba_productos.bodegas
 CREATE TABLE IF NOT EXISTS `bodegas` (
   `id` int NOT NULL AUTO_INCREMENT,
