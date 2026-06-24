@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <h2>Formulario de Producto</h2>
+    <h2>Formulario de Producto</h2> 
     <form id="frmProducto">
     <div class="form-row">
         <div>
