@@ -8,12 +8,12 @@
 </head>
 <body>
 <div class="container">
-    <h2>Formulario de Registro de Productos</h2>
+    <h2>Formulario de Producto</h2>
     <form id="frmProducto">
     <div class="form-row">
         <div>
             <div class="form-group">
-                <label for="codigo">Código Producto</label>
+                <label for="codigo">Código</label>
                 <input type="text" id="codigo" name="codigo" maxlength="15">
             </div>
             <div class="form-group">
@@ -31,7 +31,7 @@
         </div>
         <div>
             <div class="form-group">
-                <label for="nombre">Nombre Producto</label>
+                <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" maxlength="50">
             </div>
             <div class="form-group">
