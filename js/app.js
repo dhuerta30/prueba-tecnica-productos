@@ -214,11 +214,11 @@ async function guardarProducto() {
             return;
         }
         if (!moneda) {
-            alert("Debe seleccionar una moneda.");
+            alert("Debe seleccionar una moneda para el producto.");
             return;
         }
         if (!precio) {
-            alert("El precio no puede estar vacío.");
+            alert("El precio del producto no puede estar en blanco.");
             return;
         }
         const regexPrecio = /^\d+(\.\d{1,2})?$/;
