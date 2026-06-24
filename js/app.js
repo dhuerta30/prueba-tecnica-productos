@@ -153,12 +153,12 @@ async function validarCodigoUnico() {
                 body: formData
             }
         );
-        codigoValido = !data.existe;
         if (data.existe) {
+            codigoValido = false;
             alert("El código del producto ya está registrado.");
-            document.getElementById("codigo").focus();
             return false;
         }
+        codigoValido = true;
         return true;
     } catch (error) {
         console.error(error);
