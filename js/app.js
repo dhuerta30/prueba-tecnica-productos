@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarContadorDescripcion();
 });
 let codigoValido = false;
-/*
-|--------------------------------------------------------------------------
-| UTILIDADES
-|--------------------------------------------------------------------------
-*/
+// utilidades
 function mostrarLoader() {
     const loader = document.getElementById("loader");
     if (loader) {
@@ -67,9 +63,7 @@ function inicializarContadorDescripcion() {
 
     });
 }
-/*
-CARGA DE COMBOS
-*/
+// carga de combos
 async function cargarBodegas() {
     try {
         const data = await fetchJSON("php/obtener_bodegas.php");
@@ -141,11 +135,7 @@ async function cargarSucursales(idBodega) {
         console.error("Error cargando sucursales:", error);
     }
 }
-/*
-|--------------------------------------------------------------------------
-| VALIDAR CODIGO
-|--------------------------------------------------------------------------
-*/
+// validar código
 async function validarCodigoUnico() {
     const codigo = document.getElementById("codigo").value.trim();
     if (!codigo) {
@@ -175,11 +165,8 @@ async function validarCodigoUnico() {
         return false;
     }
 }
-/*
-|--------------------------------------------------------------------------
-| GUARDAR PRODUCTO
-|--------------------------------------------------------------------------
-*/
+
+// guardar producto
 async function guardarProducto() {
     bloquearBotonGuardar();
     try {
