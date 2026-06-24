@@ -4,7 +4,7 @@ require 'conexion.php';
 
 $sql = "SELECT id,nombre
         FROM materiales
-        ORDER BY nombre";
+        ORDER BY id ASC";
 
 $stmt = $pdo->query($sql);
 
