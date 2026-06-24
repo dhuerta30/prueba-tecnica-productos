@@ -167,7 +167,7 @@ async function validarCodigoUnico() {
         codigoValido = false;
         return false;
     }
-}
+} 
 
 // guardar producto
 async function guardarProducto() {
