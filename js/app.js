@@ -23,7 +23,13 @@ function ocultarLoader() {
         loader.style.display = "none";
     }
 }
+function actualizarContadorDescripcion() {
+    const textarea = document.getElementById("descripcion");
+    const contador = document.getElementById("contadorDescripcion");
 
+    const restantes = 1000 - textarea.value.length;
+    contador.textContent = `Restantes: ${restantes} caracteres`;
+}
 function bloquearBotonGuardar() {
     const boton = document.getElementById("btnGuardar");
     if (boton) {
@@ -55,13 +61,8 @@ async function fetchJSON(url, options = {}) {
 }
 function inicializarContadorDescripcion() {
     const textarea = document.getElementById("descripcion");
-    const contador = document.getElementById("contadorDescripcion");
-    textarea.addEventListener("input", function () {
-        const restantes = 1000 - this.value.length;
-        contador.textContent =
-            `Restantes: ${restantes} caracteres`;
-
-    });
+    textarea.addEventListener("input", actualizarContadorDescripcion);
+    actualizarContadorDescripcion();
 }
 // carga de combos
 async function cargarBodegas() {
@@ -262,6 +263,7 @@ async function guardarProducto() {
             document.getElementById("sucursal").innerHTML =
                 '<option value="">Seleccione</option>';
             codigoValido = false;
+            actualizarContadorDescripcion();
         } else {
             alert(data.message || "No fue posible guardar el producto.");
         }
