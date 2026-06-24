@@ -8,7 +8,6 @@ Tecnologías utilizadas:
 - JavaScript (Fetch API)
 
 Estructura:
-
 /css
     style.css
 /js
