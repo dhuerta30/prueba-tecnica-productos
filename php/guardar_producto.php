@@ -21,12 +21,18 @@ try {
         );
     }
 
-    if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,15}$/', $codigo)) {
+    if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/', $codigo)) {
         throw new Exception(
             'El código del producto debe contener letras y números.'
         );
     }
 
+    if (strlen($codigo) < 5 || strlen($codigo) > 15) {
+        throw new Exception(
+            'El código del producto debe tener entre 5 y 15 caracteres.'
+        );
+    }
+    
     if ($nombre === '') {
         throw new Exception(
             'El nombre del producto no puede estar en blanco.'
