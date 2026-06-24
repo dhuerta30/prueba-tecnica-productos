@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inicializarContadorDescripcion();
 });
 let codigoValido = false;
+
 // utilidades
 function mostrarLoader() {
     const loader = document.getElementById("loader");
@@ -136,6 +137,7 @@ async function cargarSucursales(idBodega) {
         console.error("Error cargando sucursales:", error);
     }
 }
+
 // validar código
 async function validarCodigoUnico() {
     const codigo = document.getElementById("codigo").value.trim();
