@@ -188,9 +188,13 @@ async function guardarProducto() {
             alert("El código del producto no puede estar en blanco.");
             return;
         }
-        const regexCodigo = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,15}$/;
+        const regexCodigo = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
         if (!regexCodigo.test(codigo)) {
-            alert("El código del producto debe contener letras y números y tener entre 5 y 15 caracteres.");
+            alert("El código del producto debe contener letras y números");
+            return;
+        }
+        if (codigo.length < 5 || codigo.length > 15) {
+            alert("El código del producto debe tener entre 5 y 15 caracteres.");
             return;
         }
         const disponible = await validarCodigoUnico();
@@ -223,19 +227,19 @@ async function guardarProducto() {
         }
         const regexPrecio = /^\d+(\.\d{1,2})?$/;
         if (!regexPrecio.test(precio)) {
-            alert("El precio debe ser un número válido con hasta dos decimales.");
+            alert("El precio del producto debe ser un número positivo con hasta dos decimales.");
             return;
         }
         if (materiales.length < 2) {
-            alert("Debe seleccionar al menos dos materiales.");
+            alert("Debe seleccionar al menos dos materiales para el producto.");
             return;
         }
         if (!descripcion) {
-            alert("La descripción no puede estar vacía.");
+            alert("La descripción del producto no puede estar en blanco.");
             return;
         }
         if (descripcion.length < 10 || descripcion.length > 1000) {
-            alert("La descripción debe tener entre 10 y 1000 caracteres.");
+            alert("La descripción del producto debe tener entre 10 y 1000 caracteres.");
             return;
         }
         const formData = new FormData();
