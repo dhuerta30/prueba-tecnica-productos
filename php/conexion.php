@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $dbname = "prueba_productos";
-$user = "root";
+$user = "root"; 
 $pass = "";
 
 try {
