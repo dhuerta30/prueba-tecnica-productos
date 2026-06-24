@@ -24,6 +24,7 @@ Estructura:
 /sql
     prueba_productos.sql
 index.php
+LEEME.txt
 
 Instalación:
 
