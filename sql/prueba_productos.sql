@@ -31,7 +31,6 @@ INSERT INTO `bodegas` (`id`, `nombre`) VALUES
 	(1, 'Bodega Central'),
 	(2, 'Bodega Norte'),
 	(3, 'Bodega Sur');
-
 -- Volcando estructura para tabla prueba_productos.materiales
 CREATE TABLE IF NOT EXISTS `materiales` (
   `id` int NOT NULL AUTO_INCREMENT,
