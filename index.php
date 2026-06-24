@@ -84,6 +84,10 @@
 
 </div>
 
+<div id="loader" class="loader-overlay" style="display:none;">
+    <div class="loader"></div>
+</div>
+
 <script src="js/app.js"></script>
 
 </body>
