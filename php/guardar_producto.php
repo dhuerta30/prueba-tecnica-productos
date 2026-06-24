@@ -71,13 +71,13 @@ try {
 
     if (count($materiales) < 2) {
         throw new Exception(
-            'Debe seleccionar al menos dos materiales.'
+            'Debe seleccionar al menos dos materiales para el producto.'
         );
     }
 
     if ($descripcion === '') {
         throw new Exception(
-            'La descripción no puede estar vacía.'
+            'La descripción del producto no puede estar en blanco.'
         );
     }
 
