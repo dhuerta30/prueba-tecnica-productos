@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.getElementById("btnGuardar").addEventListener("click", guardarProducto);
     document.getElementById("codigo").addEventListener("blur", validarCodigoUnico);
+    inicializarContadorDescripcion();
 });
 let codigoValido = false;
 /*
@@ -56,10 +57,18 @@ async function fetchJSON(url, options = {}) {
         ocultarLoader();
     }
 }
+function inicializarContadorDescripcion() {
+    const textarea = document.getElementById("descripcion");
+    const contador = document.getElementById("contadorDescripcion");
+    textarea.addEventListener("input", function () {
+        const restantes = 1000 - this.value.length;
+        contador.textContent =
+            `Restantes: ${restantes} caracteres`;
+
+    });
+}
 /*
-|--------------------------------------------------------------------------
-| CARGA DE COMBOS
-|--------------------------------------------------------------------------
+CARGA DE COMBOS
 */
 async function cargarBodegas() {
     try {

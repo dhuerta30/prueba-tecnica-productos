@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+#contadorDescripcion {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+}
+
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;

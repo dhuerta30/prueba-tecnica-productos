@@ -53,6 +53,9 @@
     <div class="form-group">
         <label for="descripcion">Descripción</label>
         <textarea id="descripcion" name="descripcion" maxlength="1000"></textarea>
+        <small id="contadorDescripcion">
+            Restantes: 1000 caracteres
+        </small>
     </div>
     <div class="button-container">
         <button type="button" id="btnGuardar">
