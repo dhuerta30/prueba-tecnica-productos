@@ -17,12 +17,12 @@ Estructura:
 
 /php
     conexion.php
-    obtener_bodegas.php
-    obtener_sucursales.php
-    obtener_monedas.php
-    obtener_materiales.php
-    validar_codigo.php
     guardar_producto.php
+    obtener_bodegas.php
+    obtener_materiales.php
+    obtener_monedas.php
+    obtener_sucursales.php
+    validar_codigo.php
 
 /sql
     prueba_productos.sql
