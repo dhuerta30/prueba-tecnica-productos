@@ -8,22 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btnGuardar").addEventListener("click", guardarProducto);
     document.getElementById("codigo").addEventListener("blur", validarCodigoUnico);
 });
-
 let codigoValido = false;
-
 /*
 |--------------------------------------------------------------------------
 | UTILIDADES
 |--------------------------------------------------------------------------
 */
-
 function mostrarLoader() {
     const loader = document.getElementById("loader");
     if (loader) {
         loader.style.display = "flex";
     }
 }
-
 function ocultarLoader() {
     const loader = document.getElementById("loader");
     if (loader) {
@@ -38,7 +34,6 @@ function bloquearBotonGuardar() {
         boton.textContent = "Guardando...";
     }
 }
-
 function desbloquearBotonGuardar() {
     const boton = document.getElementById("btnGuardar");
     if (boton) {
@@ -46,7 +41,6 @@ function desbloquearBotonGuardar() {
         boton.textContent = "Guardar";
     }
 }
-
 async function fetchJSON(url, options = {}) {
     mostrarLoader();
     try {
@@ -62,13 +56,11 @@ async function fetchJSON(url, options = {}) {
         ocultarLoader();
     }
 }
-
 /*
 |--------------------------------------------------------------------------
 | CARGA DE COMBOS
 |--------------------------------------------------------------------------
 */
-
 async function cargarBodegas() {
     try {
         const data = await fetchJSON("php/obtener_bodegas.php");
@@ -100,7 +92,6 @@ async function cargarMonedas() {
         console.error("Error cargando monedas:", error);
     }
 }
-
 async function cargarMateriales() {
     try {
         const data = await fetchJSON("php/obtener_materiales.php");
@@ -121,7 +112,6 @@ async function cargarMateriales() {
         console.error("Error cargando materiales:", error);
     }
 }
-
 async function cargarSucursales(idBodega) {
     const select = document.getElementById("sucursal");
     select.innerHTML = '<option value="">Seleccione</option>';
@@ -142,13 +132,11 @@ async function cargarSucursales(idBodega) {
         console.error("Error cargando sucursales:", error);
     }
 }
-
 /*
 |--------------------------------------------------------------------------
 | VALIDAR CODIGO
 |--------------------------------------------------------------------------
 */
-
 async function validarCodigoUnico() {
     const codigo = document.getElementById("codigo").value.trim();
     if (!codigo) {
@@ -178,13 +166,11 @@ async function validarCodigoUnico() {
         return false;
     }
 }
-
 /*
 |--------------------------------------------------------------------------
 | GUARDAR PRODUCTO
 |--------------------------------------------------------------------------
 */
-
 async function guardarProducto() {
     bloquearBotonGuardar();
     try {
