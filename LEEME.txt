@@ -23,6 +23,7 @@ Estructura:
     validar_codigo.php
 /sql
     prueba_productos.sql
+index.php
 
 Instalación:
 
