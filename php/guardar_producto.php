@@ -32,7 +32,7 @@ try {
             'El código del producto debe tener entre 5 y 15 caracteres.'
         );
     }
-    
+
     if ($nombre === '') {
         throw new Exception(
             'El nombre del producto no puede estar en blanco.'
@@ -92,7 +92,7 @@ try {
         strlen($descripcion) > 1000
     ) {
         throw new Exception(
-            'La descripción debe tener entre 10 y 1000 caracteres.'
+            'La descripción debe del producto debe tener entre 10 y 1000 caracteres.'
         );
     }
 
