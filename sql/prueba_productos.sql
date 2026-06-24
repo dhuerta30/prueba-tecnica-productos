@@ -45,7 +45,7 @@ INSERT INTO `materiales` (`id`, `nombre`) VALUES
 	(2, 'Metal'),
 	(3, 'Madera'),
 	(4, 'Vidrio'),
-	(5, 'Cartón');
+	(5, 'Textil');
 
 -- Volcando estructura para tabla prueba_productos.monedas
 CREATE TABLE IF NOT EXISTS `monedas` (
