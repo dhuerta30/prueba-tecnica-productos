@@ -21,7 +21,7 @@
 
             <div class="form-group">
                 <label for="codigo">Código Producto</label>
-                <input type="text" id="codigo" name="codigo">
+                <input type="text" id="codigo" name="codigo" maxlength="15">
             </div>
 
             <div class="form-group">
@@ -44,7 +44,7 @@
 
             <div class="form-group">
                 <label for="nombre">Nombre Producto</label>
-                <input type="text" id="nombre" name="nombre">
+                <input type="text" id="nombre" name="nombre" maxlength="50">
             </div>
 
             <div class="form-group">
@@ -56,7 +56,7 @@
 
             <div class="form-group">
                 <label for="precio">Precio</label>
-                <input type="text" id="precio" name="precio">
+                <input type="text" id="precio" name="precio" placeholder="Ej: 19990.50">
             </div>
 
         </div>
@@ -71,7 +71,7 @@
 
     <div class="form-group">
         <label for="descripcion">Descripción</label>
-        <textarea id="descripcion" name="descripcion"></textarea>
+        <textarea id="descripcion" name="descripcion" maxlength="1000"></textarea>
     </div>
 
     <div class="button-container">
