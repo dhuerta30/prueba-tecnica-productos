@@ -42,7 +42,7 @@ function desbloquearBotonGuardar() {
     const boton = document.getElementById("btnGuardar");
     if (boton) {
         boton.disabled = false;
-        boton.textContent = "Guardar";
+        boton.textContent = "Guardar Producto";
     }
 }
 async function fetchJSON(url, options = {}) {
