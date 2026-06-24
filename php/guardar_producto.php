@@ -92,7 +92,7 @@ try {
         strlen($descripcion) > 1000
     ) {
         throw new Exception(
-            'La descripción debe del producto debe tener entre 10 y 1000 caracteres.'
+            'La descripción del producto debe tener entre 10 y 1000 caracteres.'
         );
     }
 
