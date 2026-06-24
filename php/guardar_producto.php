@@ -1,7 +1,6 @@
 <?php
 
 header('Content-Type: application/json');
-
 require 'conexion.php';
 
 try {
@@ -14,13 +13,8 @@ try {
     $precio = trim($_POST['precio'] ?? '');
     $descripcion = trim($_POST['descripcion'] ?? '');
     $materiales = $_POST['materiales'] ?? [];
-
-    /*
-    |--------------------------------------------------------------------------
-    | VALIDACIONES
-    |--------------------------------------------------------------------------
-    */
-
+    
+    // validaciones
     if ($codigo === '') {
         throw new Exception(
             'El código del producto no puede estar en blanco.'
@@ -53,13 +47,13 @@ try {
 
     if ($sucursal <= 0) {
         throw new Exception(
-            'Debe seleccionar una sucursal.'
+            'Debe seleccionar una sucursal para la bodega seleccionada.'
         );
     }
 
     if ($moneda <= 0) {
         throw new Exception(
-            'Debe seleccionar una moneda.'
+            'Debe seleccionar una moneda para el producto.'
         );
     }
 
@@ -71,7 +65,7 @@ try {
 
     if (!preg_match('/^\d+(\.\d{1,2})?$/', $precio)) {
         throw new Exception(
-            'El precio debe ser un número válido.'
+            'El precio del producto debe ser un número positivo con hasta dos decimales.'
         );
     }
 
@@ -96,12 +90,7 @@ try {
         );
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | VALIDAR CÓDIGO ÚNICO
-    |--------------------------------------------------------------------------
-    */
-
+    // validar código único
     $sql = "
         SELECT COUNT(*)
         FROM productos
@@ -118,12 +107,7 @@ try {
         );
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | TRANSACCIÓN
-    |--------------------------------------------------------------------------
-    */
-
+    // transaccion
     $pdo->beginTransaction();
 
     $sql = "
@@ -142,9 +126,7 @@ try {
             ?, ?, ?, ?, ?, ?, ?
         )
     ";
-
     $stmt = $pdo->prepare($sql);
-
     $stmt->execute([
         $codigo,
         $nombre,
@@ -154,15 +136,9 @@ try {
         $precio,
         $descripcion
     ]);
-
     $productoId = $pdo->lastInsertId();
 
-    /*
-    |--------------------------------------------------------------------------
-    | GUARDAR MATERIALES
-    |--------------------------------------------------------------------------
-    */
-
+    // guardar materiales
     $sqlMaterial = "
         INSERT INTO producto_material
         (
@@ -176,9 +152,7 @@ try {
     ";
 
     $stmtMaterial = $pdo->prepare($sqlMaterial);
-
     foreach ($materiales as $materialId) {
-
         $stmtMaterial->execute([
             $productoId,
             $materialId
@@ -186,18 +160,15 @@ try {
     }
 
     $pdo->commit();
-
     echo json_encode([
         'success' => true,
         'message' => 'Producto guardado correctamente.'
     ]);
 
 } catch (Exception $e) {
-
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }
-
     echo json_encode([
         'success' => false,
         'message' => $e->getMessage()
