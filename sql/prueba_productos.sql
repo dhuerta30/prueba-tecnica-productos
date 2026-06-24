@@ -14,11 +14,10 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE DATABASE IF NOT EXISTS prueba_productos
-CHARACTER SET utf8mb4
-COLLATE utf8mb4_unicode_ci;
 
-USE prueba_productos;
+-- Volcando estructura de base de datos para prueba_productos
+CREATE DATABASE IF NOT EXISTS `prueba_productos` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `prueba_productos`;
 
 -- Volcando estructura para tabla prueba_productos.bodegas
 CREATE TABLE IF NOT EXISTS `bodegas` (
@@ -81,11 +80,12 @@ CREATE TABLE IF NOT EXISTS `productos` (
   CONSTRAINT `fk_producto_bodega` FOREIGN KEY (`bodega_id`) REFERENCES `bodegas` (`id`),
   CONSTRAINT `fk_producto_moneda` FOREIGN KEY (`moneda_id`) REFERENCES `monedas` (`id`),
   CONSTRAINT `fk_producto_sucursal` FOREIGN KEY (`sucursal_id`) REFERENCES `sucursales` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 
--- Volcando datos para la tabla prueba_productos.productos: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla prueba_productos.productos: ~0 rows (aproximadamente)
 INSERT INTO `productos` (`id`, `codigo`, `nombre`, `bodega_id`, `sucursal_id`, `moneda_id`, `precio`, `descripcion`, `fecha_creacion`) VALUES
-	(1, 'ft9823', 'clavo', 1, 2, 1, 400.00, 'drfgtyhjui', '2026-06-23 23:16:36');
+	(1, 'ft9823', 'clavo', 1, 2, 1, 400.00, 'drfgtyhjui', '2026-06-23 23:16:36'),
+	(2, 'ABC123', 'demo', 3, 5, 3, 56.00, 'ssadsadsad', '2026-06-24 12:17:24');
 
 -- Volcando estructura para tabla prueba_productos.producto_material
 CREATE TABLE IF NOT EXISTS `producto_material` (
@@ -97,10 +97,12 @@ CREATE TABLE IF NOT EXISTS `producto_material` (
   CONSTRAINT `fk_pm_producto` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
--- Volcando datos para la tabla prueba_productos.producto_material: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla prueba_productos.producto_material: ~4 rows (aproximadamente)
 INSERT INTO `producto_material` (`producto_id`, `material_id`) VALUES
 	(1, 2),
-	(1, 3);
+	(2, 2),
+	(1, 3),
+	(2, 3);
 
 -- Volcando estructura para tabla prueba_productos.sucursales
 CREATE TABLE IF NOT EXISTS `sucursales` (
