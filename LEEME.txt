@@ -29,11 +29,11 @@ Estructura:
 
 Instalación:
 
-1. Importar el archivo sql/prueba_productos.sql en MySQL.
-2. Verificar los datos de conexión en php/conexion.php.
-3. Copiar el proyecto en el servidor web.
+1. Importar el archivo sql/prueba_productos.sql en MySQL
+2. Verificar los datos de conexión en php/conexion.php
+3. Copiar el proyecto en el servidor web
 4. Abrir:
-   http://localhost/registro-productos
+   http://localhost/prueba-tecnica-productos
 
 Funcionalidades implementadas:
 
