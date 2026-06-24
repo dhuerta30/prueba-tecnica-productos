@@ -23,7 +23,7 @@ try {
 
     if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/', $codigo)) {
         throw new Exception(
-            'El código del producto debe contener letras y números.'
+            'El código del producto debe contener letras y números'
         );
     }
 

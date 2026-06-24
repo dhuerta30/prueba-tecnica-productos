@@ -189,7 +189,7 @@ async function guardarProducto() {
         }
         const regexCodigo = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
         if (!regexCodigo.test(codigo)) {
-            alert("El código del producto debe contener letras y números.");
+            alert("El código del producto debe contener letras y números");
             return;
         }
         if (codigo.length < 5 || codigo.length > 15) {
